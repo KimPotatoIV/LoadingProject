@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj6swkgdcxsp4"]
+
+[ext_resource type="Script" uid="uid://jpx5ikosymhx" path="res://scenes/loading/loading.gd" id="1_23b5w"]
+[ext_resource type="FontFile" uid="uid://clr37xmw6htv1" path="res://fonts/PixelOperator8-Bold.ttf" id="2_vqqgw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddh15"]
+font = ExtResource("2_vqqgw")
+font_size = 40
+font_color = Color(1, 0.7529412, 0.007843138, 1)
+
+[node name="Loading" type="Node2D"]
+script = ExtResource("1_23b5w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Loading"
+label_settings = SubResource("LabelSettings_ddh15")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+value = 60.0
